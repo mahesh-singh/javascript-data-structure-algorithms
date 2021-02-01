@@ -31,4 +31,29 @@ export default class LinkedList{
         
         return this;
     }
+
+    find(value){
+        let currentNode = this.head;
+
+        while(currentNode){
+            if(currentNode.value===value){
+                return currentNode;
+            }
+            currentNode = currentNode.next;
+        }
+        return null;
+    }
+
+    toArray(){
+        if(!this.head){
+            return [];
+        }
+        let arrayFromLinkedList = [];
+        let currentNode = this.head;
+        while(currentNode){
+            arrayFromLinkedList.push(currentNode.value);
+            currentNode = currentNode.next;
+        }
+        return arrayFromLinkedList;
+    }
 }
